@@ -23,33 +23,78 @@ package esercizio1_2;
 
 public class Cellulare {
 
+	private String numero;
 	private int credito;
 	private String ultimoNumero;
-	
-	public void creditoResiduo() {
-		System.out.println(credito);
+
+	// costruttore parametrizzato che riceve solo il numero di telefono
+	public Cellulare(String numero) {
+		this.numero = numero;
+		this.ultimoNumero = "";
+		this.credito = 0;
 	}
-	
-	public void chiama() {
-		
-		if(credito>0) {
-			System.out.println("Sto chiamando il numero: 1234567890.");
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public int getCredito() {
+		return credito;
+	}
+
+//	esiste gia' un metodo che ritorna l'ultimo numero chiamato
+//	
+//	public String getUltimoNumero() {
+//		return ultimoNumero;
+//	}
+//
+//	public void setUltimoNumero(String numero) {
+//		ultimoNumero = numero;
+//	}
+
+	public void creditoResiduo() {
+		System.out.println("Il credito residuo e' di: " + credito + " euro.");
+	}
+
+	public void chiama(String numero) {
+
+		System.out.println("Sto chiamando il numero: " + numero);
+
+		// controllo credito
+		if (credito > 0) {
+			// controllo numero valido
+			if (numero == this.numero)
+				System.out.println("Numero non valido");
 			credito--;
-		}
-		else
+			ultimoNumero = numero;
+		} else
 			System.out.println("Credito insufficiente.");
 	}
-	
+
+	// restituisce null se il registro e' vuoto
 	public String ultimaChiamataEffettuata() {
-		return ultimoNumero;
+		if (ultimoNumero == "") {
+			System.out.println("Nessun numero chiamato in precedenza");
+			return "Nessun numero chiamato in precedenza";
+		} else
+			return ultimoNumero;
 	}
-	
+
 	public void richiama() {
-		
+		if (ultimoNumero == "") {
+			System.out.println("Nessun numero chiamato in precedenza");
+			return; 
+		}
+
+		chiama(ultimoNumero);
 	}
-	
-	public void ricaricaCredito() {
-		
+
+	public void ricaricaCredito(int n) {
+		if (n > 0) {
+			credito += n;
+			System.out.println("La ricarica di " + n + " euro e' stata effettuata.");
+		} else
+			System.out.println("Importo non valido");
 	}
 
 }
