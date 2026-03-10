@@ -1,5 +1,5 @@
 package esercizio1_2;
-
+import java.util.Scanner;
 /*
  * Dopo aver fatto l'esercizio 1, creare una classe Java che chiameremo EsempioCellulare, 
  * nello stesso package di Cellulare. La classe deve avere il metodo main e nel metodo main dovete: 
@@ -13,6 +13,8 @@ package esercizio1_2;
 public class EsempioCellulare {
 
 	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
 
 		// nuovo cellulare
 		System.out.println("Creo nuovo Cellulare con il seguente numero: 1234567890;");
@@ -22,8 +24,9 @@ public class EsempioCellulare {
 		System.out.println("Chiamo ultimo numero.");
 		telefono.richiama();
 		
-		// chiamo il numero 0987654321
-		telefono.chiama("0987654321");
+		// chiamo nuovo numero da tastiera
+		System.out.print("Digitare numero da chiamare: ");
+		telefono.chiama(input.nextLine());
 
 		// controllo credito
 		telefono.creditoResiduo();
@@ -32,7 +35,7 @@ public class EsempioCellulare {
 		telefono.ricaricaCredito(10);
 
 		// chiamo il numero 0987654321
-		telefono.chiama("0987654321");
+		telefono.richiama();
 
 		// controllo ultimo numero chiamato
 		System.out.println("L'utimo numero chiamato e': " + telefono.ultimaChiamataEffettuata());

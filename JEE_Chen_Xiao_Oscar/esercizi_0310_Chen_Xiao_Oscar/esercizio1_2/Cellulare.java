@@ -59,31 +59,28 @@ public class Cellulare {
 	public void chiama(String numero) {
 
 		System.out.println("Sto chiamando il numero: " + numero);
+		ultimoNumero = numero;
+
+		// controllo numero valido
+		if (numero == this.numero || numero == null)
+			System.out.println("Numero non valido");
 
 		// controllo credito
-		if (credito > 0) {
-			// controllo numero valido
-			if (numero == this.numero)
-				System.out.println("Numero non valido");
+		if (credito > 0)
 			credito--;
-			ultimoNumero = numero;
-		} else
+		else
 			System.out.println("Credito insufficiente.");
 	}
 
 	// restituisce null se il registro e' vuoto
 	public String ultimaChiamataEffettuata() {
-		if (ultimoNumero == "") {
-			System.out.println("Nessun numero chiamato in precedenza");
-			return "Nessun numero chiamato in precedenza";
-		} else
-			return ultimoNumero;
+		return ultimoNumero;
 	}
 
 	public void richiama() {
 		if (ultimoNumero == "") {
-			System.out.println("Nessun numero chiamato in precedenza");
-			return; 
+			System.out.println("Nessun numero chiamato in precedenza.");
+			return;
 		}
 
 		chiama(ultimoNumero);
