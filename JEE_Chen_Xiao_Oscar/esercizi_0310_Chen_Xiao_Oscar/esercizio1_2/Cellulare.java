@@ -67,7 +67,7 @@ public class Cellulare {
 
 		// controllo credito
 		if (credito > 0)
-			credito--;
+			this.credito--;
 		else
 			System.out.println("Credito insufficiente.");
 	}

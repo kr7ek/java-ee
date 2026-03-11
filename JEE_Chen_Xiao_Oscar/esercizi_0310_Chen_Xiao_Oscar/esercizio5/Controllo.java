@@ -15,10 +15,9 @@ public class Controllo {
 
 		System.out.println("Sia il primo array con questi numeri: 3, 7, 17, 19, 26, 77 e 90.");
 		System.out.println("Sia il secondo array con questi numeri: 8, 17, 23, 58, -67, 50 e 33.");
-		
+
 		System.out.println();
-		
-		
+
 		System.out.println("Verifica sul primo array:");
 		for (int i = 0; i < numeri1.length; i++) {
 			if (numeri1[i] < 0) {

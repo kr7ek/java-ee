@@ -1,4 +1,5 @@
 package esercizio3_4;
+
 import java.util.Scanner;
 
 /*
@@ -17,39 +18,41 @@ import java.util.Scanner;
 public class Ricerca {
 
 	public static void main(String[] args) {
-		
-		int[] numeri = {1, 25, -4, 36, 0, -1, -4, 27, 3, -1, -1, 52};
+
+		final int[] numeri = { 1, 25, -4, 36, 0, -1, -4, 27, 3, -1, -1, 52 };
 		int val;
 		Scanner input = new Scanner(System.in);
 		boolean flag = false;
-		
+
 		// inserimento numero
 		System.out.print("Per favore inserire un numero intero: ");
 		val = input.nextInt();
 		input.close();
-		
+
 		// cerca e segnala presenza del numero
-		for(int i=0; i<numeri.length; i++)
-			if(numeri[i] == val)
+		for (int i = 0; i < numeri.length; i++)
+			if (numeri[i] == val) {
 				flag = true;
-		
+				break;
+			}
+
 		// stampa messaggio di esito
-		if(flag)
+		if (flag)
 			System.out.println("il numero " + val + " e' presente " + conta(numeri, val) + " volte nell' array.");
 		else
 			System.out.println("il numero " + val + " non e' presente nell' array.");
-		
+
 	}
-	
+
 	// conta le occorrenza di un numero val in un array num
 	public static int conta(int[] num, int val) {
-		
+
 		int count = 0;
-		
-		for(int i=0; i<num.length; i++)
-			if(num[i] == val)
+
+		for (int i = 0; i < num.length; i++)
+			if (num[i] == val)
 				count++;
-		
+
 		return count;
 	}
 }

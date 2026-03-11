@@ -27,6 +27,7 @@ public class EsempioCellulare {
 		// chiamo nuovo numero da tastiera
 		System.out.print("Digitare numero da chiamare: ");
 		telefono.chiama(input.nextLine());
+		input.close();
 
 		// controllo credito
 		telefono.creditoResiduo();
