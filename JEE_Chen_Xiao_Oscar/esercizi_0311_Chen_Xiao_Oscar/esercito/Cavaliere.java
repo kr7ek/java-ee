@@ -4,6 +4,10 @@ public class Cavaliere extends Soldato {
 
 	private String cavallo;
 
+	public Cavaliere() {
+
+	}
+
 	public Cavaliere(String nome, String cavallo) {
 		super(nome);
 		this.cavallo = cavallo;
@@ -21,7 +25,7 @@ public class Cavaliere extends Soldato {
 	@Override
 	public void gridoDiBattaglia() {
 		// TODO Auto-generated method stub
-		System.out.println("Il cavaliere " + this.nome + " e' schierato!");
+		System.out.println("Il cavaliere " + this.nome + " e' stato schierato!");
 	}
 
 	@Override

@@ -1,5 +1,20 @@
 package geometria;
 
+/*
+ * Creare una classe astratta che rappresenterà una figura geometrica generica, 
+ * nel package "geometria", con due metodi astratti: calcolaArea(); e calcolaPerimetro();
+ * Sentitevi liberi di aggiungere delle costanti.
+ * 
+ * Creare almeno tre classi, sempre nel package "geometria", che rappresentano delle figure 
+ * geometriche piane, come ad esempio il triangolo ed il cerchio, che estenderanno la classe di 
+ * base. Dotare le tre classi delle variabili appropriate, dei costruttori e fare l'override dei due 
+ * metodi in modo tale da riuscire a calcolare perimetro ed area.
+ * 
+ * Creare una classe "TestFigureGeometriche" sempre nel package "geometria", con un metodo
+ * main in cui verranno istanziate le tre classi ed in cui verranno stampati 
+ * perimetro ed area delle figure.
+ */
+
 public class TestFiguraGeometrica {
 
 	public static void main(String[] args) {

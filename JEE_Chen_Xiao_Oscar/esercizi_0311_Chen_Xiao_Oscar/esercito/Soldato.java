@@ -4,6 +4,10 @@ public abstract class Soldato {
 
 	protected String nome;
 
+	public Soldato() {
+
+	}
+
 	public Soldato(String nome) {
 		this.nome = nome;
 	}

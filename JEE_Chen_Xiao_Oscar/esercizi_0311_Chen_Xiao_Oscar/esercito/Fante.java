@@ -4,6 +4,10 @@ public class Fante extends Soldato {
 
 	private String armatura;
 
+	public Fante() {
+
+	}
+
 	public Fante(String nome, String armatura) {
 		super(nome);
 		this.armatura = armatura;
@@ -22,7 +26,7 @@ public class Fante extends Soldato {
 	@Override
 	public void gridoDiBattaglia() {
 		// TODO Auto-generated method stub
-		System.out.println("Il fante " + this.nome + " e' schierato!");
+		System.out.println("Il fante " + this.nome + " e' stato schierato!");
 
 	}
 
