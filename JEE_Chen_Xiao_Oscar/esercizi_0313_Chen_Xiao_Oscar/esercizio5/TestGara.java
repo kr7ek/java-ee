@@ -13,7 +13,12 @@ package esercizio5;
 public class TestGara {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		Gara gara = new Gara(37, 7);
+
+		Pilota vincitore = gara.corriGara();
+
+		System.out.println("Il vincitore e': " + vincitore.getNome() + " con l'auto: " + vincitore.getAuto().getScuderia());
 
 	}
 
