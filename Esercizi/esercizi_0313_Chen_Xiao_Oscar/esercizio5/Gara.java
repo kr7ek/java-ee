@@ -3,46 +3,29 @@ import java.util.Random;
 
 public class Gara {
 
-	private int circuito;
+	private String circuito;
 	private Pilota vincitore;
 	private Pilota[] grigliaPartenza;
 
 	// // costruttore default
 	public Gara() {
-		this.circuito = 0;
+		this.circuito = "";
 		this.vincitore = null;
 	}
 
 	// costruttore parametrizzato
-	public Gara(int circuito, int numeroPartecipanti) {
-		this.circuito = circuito;
+	public Gara(int numeroPartecipanti) {
 		this.vincitore = null;
 		creaGrigliaDiPartenza(numeroPartecipanti);
 	}
 
 	// getters e setters
-	public int getCircuito() {
+	public String getCircuito() {
 		return circuito;
 	}
 
-	public void setCircuito(int circuito) {
+	public void setCircuito(String circuito) {
 		this.circuito = circuito;
-	}
-
-	public Pilota getVincitore() {
-		return vincitore;
-	}
-
-	public void setVincitore(Pilota vincitore) {
-		this.vincitore = vincitore;
-	}
-
-	public Pilota[] getGrigliaPartenza() {
-		return grigliaPartenza;
-	}
-
-	public void setGrigliaPartenza(Pilota[] grigliaPartenza) {
-		this.grigliaPartenza = grigliaPartenza;
 	}
 	
 	// istanzia n piloti in un array
@@ -50,15 +33,20 @@ public class Gara {
 		
 		grigliaPartenza = new Pilota[n];
 		
+		// genera n numeri di piloti
 		for(int i=0; i<n; i++) {
-			grigliaPartenza[i] = new Pilota("Pilota" + i , new Auto("Auto" + i));
+			grigliaPartenza[i] = new Pilota("Pilota" + (i+1) , new Auto("Scuderia" + (i+1)));
+			System.out.println("Il pilota " +grigliaPartenza[i].getNome() + " con l'auto " + grigliaPartenza[i].getAuto().getScuderia() + " in posizione.");
 		}
 	}
 	
+	// ritorna un vincitore casuale tra i piloti
 	public Pilota corriGara() {
 		
+		System.out.println("Piloti partiti! Gara in corso...");
+		
 		Random rand = new Random();
-        vincitore = grigliaPartenza[rand.nextInt(grigliaPartenza.length)];
+        vincitore = grigliaPartenza[rand.nextInt(grigliaPartenza.length-1)];
 		
 		return vincitore;
 	}

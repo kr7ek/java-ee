@@ -14,11 +14,12 @@ public class TestGara {
 
 	public static void main(String[] args) {
 
-		Gara gara = new Gara(37, 7);
+		Gara gara = new Gara(10);
 
 		Pilota vincitore = gara.corriGara();
 
-		System.out.println("Il vincitore e': " + vincitore.getNome() + " con l'auto: " + vincitore.getAuto().getScuderia());
+		System.out.println("Gara terminata!\nIl vincitore e': " + vincitore.getNome() + " con l'auto "
+				+ vincitore.getAuto().getScuderia());
 
 	}
 
