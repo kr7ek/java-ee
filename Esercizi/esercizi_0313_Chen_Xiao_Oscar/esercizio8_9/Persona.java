@@ -1,5 +1,21 @@
 package esercizio8_9;
 
+/*
+ * Realizzare una classe Persona avente gli attributi nome, cognome ed età, 
+ * i metodi get/set e l’override del metodo toString(). 
+ * Tale classe dovrà essere estesa dalle classi Studente e Insegnante. 
+ * In particolare:
+ *   • La classe Studente avrà l’attributo mediaVoti, i metodi get/set, 
+ *     l’override del metodo toString() di Persona ed un metodo studia() 
+ *     (tale metodo può effettuare anche soltanto una stampa a video). 
+ *     Inoltre dovrà essere implementato il metodo calcolaMediaVoti() 
+ *     il quale riceverà in ingresso un varargs di interi che saranno i voti 
+ *     e ne dovrà effettuare il calcolo della media ed assegnarlo alla variabile globale mediaVoti.
+ *   • La classe Insegnante avrà l’attributo materia, i metodi get/set, 
+ *     l’override del metodo toString() di Persona ed un metodo insegna() 
+ *     (tale metodo può effettuare anche soltanto una stampa a video).
+*/
+
 public abstract class Persona {
 
 	private String nome;
