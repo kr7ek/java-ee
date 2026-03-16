@@ -17,8 +17,9 @@ public class Main {
 	public static void main(String[] args) {
 
 		Macchinetta macchinetta = new Macchinetta(7);
-		System.out.println("Comprata nuova macchinetta che prepara fino a 7 cialde consecutive!");
-		
+		System.out.println(
+				"Comprata nuova macchinetta che prepara fino a " + macchinetta.getCassetto() + " cialde consecutive!");
+
 		System.out.println("Sto preparando 100 caffe'. Attendere...");
 
 		// preparazione 100 caffe'
