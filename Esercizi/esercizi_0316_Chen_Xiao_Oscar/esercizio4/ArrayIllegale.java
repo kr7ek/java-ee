@@ -10,7 +10,7 @@ public class ArrayIllegale {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int[] numeri = { 1, 2, 3, 4 };
+		int[] numeri = { 1, 2, 3, 4, 5, 6, 7, 8 };
 
 		try {
 			for (int i = 0; i < 5; i++)
