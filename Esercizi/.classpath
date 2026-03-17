@@ -11,6 +11,6 @@
 	<classpathentry kind="src" path="esercizi_0313_Chen_Xiao_Oscar"/>
 	<classpathentry kind="src" path="esercizi_0316_Chen_Xiao_Oscar"/>
 	<classpathentry kind="src" path="esercizi_0317_Chen_Xiao_Oscar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-25"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -29,16 +29,17 @@ public enum Cardinal {
 		return false;
 	}
 
-	public static Cardinal mix(Cardinal a, Cardinal b) {
+	public static Cardinal mix(Cardinal a, Cardinal b) throws CardinalException {
 
 		// se sono opposti o se coincidono allora non va bene
-		if (a.ordinal() == b.ordinal() || a.isOpposite(b))
-			System.out.println("Punti non validi.");
+		if (a.ordinal() == b.ordinal() || a.isOpposite(b)) 
+			throw new CardinalException("Punti non validi. Programma terminato");
+		
 
 		if (a.ordinal() < b.ordinal())
-			return Cardinal.values()[a.ordinal()+((b.ordinal() - a.ordinal()) / 2)];
+			return Cardinal.values()[a.ordinal() + ((b.ordinal() - a.ordinal()) / 2)];
 		if (a.ordinal() > b.ordinal())
-			return Cardinal.values()[b.ordinal()+((a.ordinal() - b.ordinal()) / 2)];
+			return Cardinal.values()[b.ordinal() + ((a.ordinal() - b.ordinal()) / 2)];
 
 		return null;
 	}
