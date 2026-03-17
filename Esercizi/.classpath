@@ -10,6 +10,7 @@
 	<classpathentry kind="src" path="esercizi_0312_Chen_Xiao_Oscar"/>
 	<classpathentry kind="src" path="esercizi_0313_Chen_Xiao_Oscar"/>
 	<classpathentry kind="src" path="esercizi_0316_Chen_Xiao_Oscar"/>
+	<classpathentry kind="src" path="esercizi_0317_Chen_Xiao_Oscar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
