@@ -1,6 +1,7 @@
 package esercizio5;
 
-/* Sviluppare le seguenti classi:
+/* 
+ * Sviluppare le seguenti classi:
  *  - Rectangle
  *  - Square
  * Sviluppare, inoltre, la classe Point2D che tiene traccia della posizione 
