@@ -33,7 +33,7 @@ public enum Cardinal {
 
 		// se sono opposti o se coincidono allora non va bene
 		if (a.ordinal() == b.ordinal() || a.isOpposite(b)) 
-			throw new CardinalException("Punti non validi. Programma terminato");
+			throw new CardinalException("Punti non validi.");
 		
 
 		if (a.ordinal() < b.ordinal())

@@ -8,6 +8,7 @@ public class Main {
 		System.out.println(Cardinal.N.isOpposite(Cardinal.S));
 		System.out.println(Cardinal.NE.isOpposite(Cardinal.SO));
 		System.out.println(Cardinal.ONO.isOpposite(Cardinal.ESE));
+		System.out.println(Cardinal.N.isOpposite(Cardinal.E));
 
 		try {
 			System.out.println(Cardinal.mix(Cardinal.N, Cardinal.NE));
