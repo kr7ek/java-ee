@@ -7,11 +7,10 @@ public abstract class Veicolo {
 	private int annoImmatricolazione;
 	private double costoNoleggioGiornaliero;
 
-	public Veicolo(String modello, String targa, int annoImmatricolazione, double costoNoleggioGiornaliero) {
+	public Veicolo(String modello, String targa, int annoImmatricolazione) {
 		this.modello = modello;
 		this.targa = targa;
 		this.annoImmatricolazione = annoImmatricolazione;
-		this.costoNoleggioGiornaliero = costoNoleggioGiornaliero;
 	}
 
 	public String getModello() {
@@ -44,6 +43,11 @@ public abstract class Veicolo {
 
 	public void setCostoNoleggioGiornaliero(double costoNoleggioGiornaliero) {
 		this.costoNoleggioGiornaliero = costoNoleggioGiornaliero;
+	}
+	
+	@Override
+	public String toString() {
+		return "";
 	}
 	
 }

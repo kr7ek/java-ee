@@ -21,6 +21,28 @@ public class TestTrasporti {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		GestioneFlotta gestioneFlotta = new GestioneFlotta();
+
+		Automobile auto1 = new Automobile("Fiat Panda", "AB123CD", 2015, 5);
+		Furgone furgone1 = new Furgone("Iveco Daily", "EF456GH", 2018, 100.0);
+		Motociclo moto1 = new Motociclo("Yamaha MT-07", "IJ789KL", 2020, 689);
+
+		gestioneFlotta.aggiungiVeicolo(auto1);
+		gestioneFlotta.aggiungiVeicolo(furgone1);
+		gestioneFlotta.aggiungiVeicolo(moto1);
+
+		System.out.println("Catalogo veicoli:");
+		gestioneFlotta.visualizzaVeicolo();
+		String modelloNoleggio = "Fiat Panda";
+		int giorniNoleggio = 3;
+		double costoTotale = gestioneFlotta.calcolaCostoNoleggio(modelloNoleggio, giorniNoleggio);
+		System.out.println("Costo totale del noleggio per " + giorniNoleggio + " giorni di " + modelloNoleggio + ": "
+				+ costoTotale);
+
+		String modelloRimozione = "Iveco Daily";
+		gestioneFlotta.rimuoviVeicolo(modelloRimozione);
+		System.out.println("Catalogo veicoli dopo la rimozione di " + modelloRimozione + ":");
+		gestioneFlotta.visualizzaVeicolo();
 	}
 
 }
