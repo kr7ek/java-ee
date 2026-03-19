@@ -1,8 +1,8 @@
 package esercizio5;
 
-public interface TwoDShape <T> {
+public interface TwoDShape {
 
-	public void perimetro();
+	public int perimetro();
 
-	public void area();
+	public int area();
 }

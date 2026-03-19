@@ -1,6 +1,6 @@
 package esercizio5;
 
-public class Square implements TwoDShape {
+public class Square implements TwoDShape, Shape {
 
 	int lato;
 
@@ -22,19 +22,26 @@ public class Square implements TwoDShape {
 		this.lato = lato;
 	}
 
-
 	@Override
 	public int area() {
 		// TODO Auto-generated method stub
-		
-	return lato*lato;
+
+		return lato * lato;
 	}
 
 	@Override
-	public <T> int perimetro() {
+	public int perimetro() {
+
 		// TODO Auto-generated method stub
-		
+		return 4 * lato;
+
 	}
-	
+
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		System.out.println("Sto disegnando un quadrato di lati " + this.getLato() + ".");
+
+	}
 
 }

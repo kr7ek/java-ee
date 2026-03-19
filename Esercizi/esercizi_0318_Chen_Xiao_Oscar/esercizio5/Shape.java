@@ -1,6 +1,6 @@
 package esercizio5;
 
-public interface Shape <T>{
+public interface Shape {
 
-	public T draw();
+	public void draw();
 }
