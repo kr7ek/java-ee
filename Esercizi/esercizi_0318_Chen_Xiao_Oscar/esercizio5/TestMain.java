@@ -16,7 +16,19 @@ public class TestMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		
+		Point2D p1 = new Point2D(2, 3);
+		p1.draw();
+
+		Rectangle rettangolo = new Rectangle(5, 8);
+		rettangolo.draw();
+		System.out.println("Il suo perimetro e': " + rettangolo.perimetro());
+		System.out.println("La sua area e': " + rettangolo.area());
+
+		Square quadrato = new Square(5);
+		quadrato.draw();
+		System.out.println("Il suo perimetro e': " + quadrato.perimetro());
+		System.out.println("La sua area e': " + quadrato.area());
+
 	}
 
 }
