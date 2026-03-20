@@ -20,12 +20,19 @@ public class Box {
 
 	// Costruttore che solleva un'eccezione se le dimensioni sono minori di 0
 	public Box(double altezza, double lunghezza, double profondita) throws UndiscoveredDimensionException {
-		if (altezza < 0 || lunghezza < 0 || profondita < 0) {
-			throw new UndiscoveredDimensionException("Le dimensioni della scatola devono essere maggiori di 0.");
+
+		try {
+			if (altezza < 0 || lunghezza < 0 || profondita < 0) {
+				throw new UndiscoveredDimensionException("Le dimensioni della scatola devono essere maggiori di 0.\n");
+			}
+		} catch (UndiscoveredDimensionException e) {
+			System.out.println(e.getMessage());
+			return;
 		}
 		this.altezza = altezza;
 		this.lunghezza = lunghezza;
 		this.profondita = profondita;
+		System.out.println("Scatola creata con successo: " + altezza + "x" + lunghezza + "x" + profondita + ".\n");
 	}
 
 	// Metodi get/set
