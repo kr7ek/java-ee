@@ -46,6 +46,8 @@ public class MidMax {
 		} else {
 			System.out.println("Nessun numero inserito.");
 		}
+		
+		sc.close();
 
 	}
 

@@ -39,6 +39,7 @@ public class Decrescente {
 		System.out.println("La somma e': " + somma);
 		System.out.println("La media e': " + (double) somma / count);
 
+		input.close();
 	}
 
 }

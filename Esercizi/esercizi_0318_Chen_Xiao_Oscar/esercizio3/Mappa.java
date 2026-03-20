@@ -36,6 +36,8 @@ public class Mappa {
 			System.out.print(mappa.get(chiave));
 		else
 			System.out.print("Chiave non valida.");
+		
+		in.close();
 
 	}
 
