@@ -50,6 +50,8 @@ public class StampaMultipli {
 		for (Integer multiplo : multipli) {
 			System.out.println(multiplo);
 		}
+		
+		sc.close();
 
 	}
 
