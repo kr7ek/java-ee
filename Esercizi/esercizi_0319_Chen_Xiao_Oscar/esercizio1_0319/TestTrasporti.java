@@ -19,8 +19,6 @@ package esercizio1_0319;
 public class TestTrasporti {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		GestioneFlotta gestioneFlotta = new GestioneFlotta();
 
 		Automobile auto1 = new Automobile("Fiat Panda", "AB123CD", 2015, 5);
@@ -31,16 +29,31 @@ public class TestTrasporti {
 		gestioneFlotta.aggiungiVeicolo(furgone1);
 		gestioneFlotta.aggiungiVeicolo(moto1);
 
+		// Tentativo di aggiungere un duplicato (stessa targa)
+		Automobile autoDuplicata = new Automobile("Fiat Panda" , "AB123CD", 2016, 4);
+		gestioneFlotta.aggiungiVeicolo(autoDuplicata); // dovrebbe essere ignorato
+
 		System.out.println("Catalogo veicoli:");
 		gestioneFlotta.visualizzaVeicolo();
+
 		String modelloNoleggio = "Fiat Panda";
 		int giorniNoleggio = 3;
 		double costoTotale = gestioneFlotta.calcolaCostoNoleggio(modelloNoleggio, giorniNoleggio);
 		System.out.println("Costo totale del noleggio per " + giorniNoleggio + " giorni di " + modelloNoleggio + ": "
 				+ costoTotale);
 
+		// Calcolo costo per modello inesistente
+		String modelloAssente = "Non Esiste";
+		try {
+			double costoAssente = gestioneFlotta.calcolaCostoNoleggio(modelloAssente, 2);
+			System.out.println("Costo per modello assente: " + costoAssente);
+		} catch (IllegalArgumentException e) {
+			System.out.println("Errore calcolo costo: " + e.getMessage());
+		}
+
 		String modelloRimozione = "Iveco Daily";
-		gestioneFlotta.rimuoviVeicolo(modelloRimozione);
+		boolean rimosso = gestioneFlotta.rimuoviVeicolo(modelloRimozione);
+		System.out.println("Rimozione di " + modelloRimozione + (rimosso ? " avvenuta" : " non trovata"));
 		System.out.println("Catalogo veicoli dopo la rimozione di " + modelloRimozione + ":");
 		gestioneFlotta.visualizzaVeicolo();
 	}
