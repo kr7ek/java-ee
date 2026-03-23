@@ -21,7 +21,7 @@ public class Lampadina {
 	private int clickMax;
 	private int clickCount;
 	private String stato;
-	private boolean correnteElettrica; // Variabile statica per condividere lo stato della corrente elettrica
+	private boolean correnteElettrica; // Variabile per condividere lo stato della corrente elettrica
 
 	public Lampadina(int clickMax) {
 		this.clickMax = clickMax;
