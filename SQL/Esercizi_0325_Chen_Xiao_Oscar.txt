@@ -1,0 +1,105 @@
+# A – Partendo dal database creato ieri, scrivere le seguenti query: 
+
+# Mostra tutti i libri. 
+SELECT * FROM libro;
+
+# Mostrare i libri con ISBN esattamente 'FTMR55123123H'. 
+SELECT * FROM libro WHERE isbn = "FTMR55123123H";
+
+# Mostrare gli autori di nome 'Carlo'. 
+SELECT * FROM autore WHERE nome = "carlo";
+
+# Mostrare i libri che contengono la parola 'romanzo' nella descrizione. 
+SELECT * FROM libro WHERE descrizione LIKE "%romanzo%";
+
+# Mostrare i libri il cui titolo inizia con 'Il vecchio'. 
+SELECT * FROM libro WHERE titolo LIKE "Il Vecchio%";
+
+# Mostrare i libri il cui ISBN inizia con '12345'. 
+SELECT * FROM libro WHERE isbn LIKE "12345%";
+
+# Mostrare i libri il cui ISBN finisce con 'T37A'. 
+SELECT * FROM libro WHERE isbn LIKE "%T37A";
+
+# Mostrare gli autori nati esattamente il 21 luglio del 1899. 
+SELECT * FROM autore WHERE data_nascita = '1899-07-21';
+
+# Mostrare gli autori con id compreso tra 2 e 5. 
+SELECT * FROM autore WHERE ID BETWEEN 2 AND 5;
+
+# Mostrare i libri con id minore di 3 e maggiore di 5. 
+SELECT * FROM autore WHERE ID < 3 AND ID > 5;
+
+# Mostrare gli autori con id uguale a 2 oppure maggiore di 4. 
+SELECT * FROM Autore WHERE ID = 2 OR ID > 4;
+
+# Mostrare i libri che contengono 'mare' nel titolo e che contengono 'romanzo' nella descrizione.  (O “mare”  o “romanzo”)
+SELECT * FROM libro WHERE descrizione LIKE "%romanzo%" OR titolo LIKE "%mare%";
+
+# Mostrare i libri che contengono 'mare' oppure 'racconto' nella descrizione. 
+SELECT * FROM libro WHERE descrizione LIKE "%mare%" OR descrizione LIKE "%racconto%";
+
+# Mostrare i libri che contengono 'mare' nel titolo oppure nella descrizione. 
+SELECT * FROM libro WHERE titolo LIKE '%mare%' OR descrizione LIKE '%mare%';
+
+# Mostrare i libri che contengono 'mare' nel titolo e che NON contengono 'romanzo' nella descrizione. 
+SELECT * FROM libro WHERE titolo LIKE '%mare%' AND descrizione NOT LIKE '%romanzo%';
+
+# Mostrare gli autori che si chiamano 'Ernest' oppure di cognome 'Marcone'. 
+SELECT * FROM autore WHERE nome = 'Ernest' OR cognome = 'Marcone';
+
+# Mostrare gli autori che si chiamano 'Ernest Hemingway'. 
+SELECT * FROM autore WHERE nome = 'Ernest' AND cognome = 'Hemingway';
+
+# Mostrare il costo dei libri nella cui descrizione hanno la parola 'romanzo'. 
+SELECT costo FROM libro WHERE descrizione LIKE '%romanzo%';
+
+# Mostrare il numero dei libri dove nel titolo non compare la parola 'mare'. 
+SELECT COUNT(*) AS NumeroLibri FROM Libro WHERE titolo NOT LIKE '%mare%';
+
+# Mostrare nome, cognome e data di nascita di tutti gli autori. 
+SELECT nome, cognome, data_nascita FROM autore;
+
+# B –Partendo dal database creato ieri, scrivere le seguenti query: 
+
+# Mostrare tutti i clienti. 
+SELECT * FROM utente;
+
+# Mostrare tutti i clienti che hanno fornito una email. 
+SELECT * FROM utente WHERE email IS NOT NULL;
+
+# Mostrare tutti i clienti che hanno fornito una email di gmail. 
+SELECT * FROM utente WHERE email LIKE '%@gmail.com';
+
+# Mostrare tutti i clienti di nome Marco. 
+SELECT * FROM utente WHERE nome = 'Marco';
+
+# Mostrare tutti i clienti che si chiamano Davide di nome e Moraschi di cognome. 
+SELECT * FROM utente WHERE nome = 'Davide' AND cognome = 'Moraschi';
+
+# Mostrare i clienti con id minore di 10. 
+SELECT * FROM utente WHERE id < 10;
+
+# Mostrare i clienti con id compreso tra 2 e 7. 
+SELECT * FROM utente WHERE id >= 2 AND id <= 7;
+
+# Mostrare tutti i prestiti. 
+SELECT * FROM prestito;
+
+# Mostrare tutti i prestiti che iniziano il 4 luglio 2022. 
+SELECT * FROM prestito WHERE data_inizio_prestito = '2022-07-04';
+
+# Mostrare tutti i prestiti che iniziano dal 4 luglio 2022 in poi. 
+SELECT * FROM prestito WHERE data_inizio_prestito > '2022-07-04';
+
+# Mostrare tutti i prestiti che sono finiti il 30 luglio 2022.
+SELECT * FROM Prestito WHERE DATA_FINE_PRESTITO = '2022-07-30';
+
+# Mostrare tutti i prestiti che sono finiti dal 30 luglio 2022 in poi. 
+SELECT * FROM Prestito WHERE DATA_FINE_PRESTITO > '2022-07-30';
+
+# Mostrare tutti i prestiti che non hanno una data di fine prestito. 
+SELECT * FROM Prestito WHERE DATA_FINE_PRESTITO IS NULL;
+
+# Mostrare tutti i prestiti che non hanno né una data di fine prestito, né una data di inizio prestito.
+SELECT * FROM Prestito WHERE DATA_FINE_PRESTITO IS NULL AND DATA_INIZIO_PRESTITO IS NULL;

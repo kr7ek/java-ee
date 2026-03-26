@@ -1,0 +1,71 @@
+CREATE DATABASE biblioteca;
+USE biblioteca;
+
+CREATE TABLE libro(
+id INT(10) AUTO_INCREMENT PRIMARY KEY,
+isbn VARCHAR(25) UNIQUE NOT NULL,
+titolo VARCHAR(50) NOT NULL,
+descrizione VARCHAR(500),
+costo DECIMAL(10,2)
+);
+
+CREATE TABLE autore(
+id INT(10) AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(20) NOT NULL,
+cognome VARCHAR(20) NOT NULL,
+codice_fiscale CHAR(16) UNIQUE,
+data_nascita DATE
+);
+
+INSERT INTO libro (isbn, titolo, descrizione, costo) VALUES ('12345FFGBN', 'Il vecchio e il mare', 'Santiago è un vecchio pescatore cubano colpito da una sfortuna che non lo abbandona. Sono ormai 84 giorni che non pesca nulla ed è ridotto quasi alla miseria.', 12.40);
+INSERT INTO libro (isbn, titolo, descrizione, costo) VALUES ('ABC12345G', 'Fra Pierino e il suo ciuchino', 'Titolo: Fra Pierino e il suo ciuchino; Autore: Munoz Juan Martin', 8.40);
+INSERT INTO libro (isbn, titolo, descrizione, costo) VALUES ('LKJ716523T37A', 'Cerca Jovanka cerca', 'Autore Maria Marcone. Edizione Mursia.', 11.50), 
+('6512T123AAB', 'Cristo s\'è fermato a Eboli', 'Autore Carlo Levi, è un romanzo autobiografico dello scrittore italiano Carlo Levi...', 7.90),
+('FTMR55123123H', 'Fontamara', 'Autore: Ignazio Silone, è un romanzo pubblicato nel 1933', 9.10),
+('RMA54ZJ22', 'Addio alle armi', 'Addio alle armi (A Farewell to Arms) è un romanzo dello scrittore statunitense Ernest Hemingway, pubblicato nel 1929.', 8.20);
+
+INSERT INTO autore (nome, cognome, codice_fiscale, data_nascita) VALUES ('Ernest', 'Hemingway', 'HMNRST99L21Z114U', '1899-07-21'),
+('Ignazio', 'Silone', 'SLNGNZ00E01Z133S', '1900-05-01'),
+('Juan', 'Muñoz Martín', 'MNZJNU29E13Z131V', '1929-05-13'),
+('Maria', 'Marcone', 'MRCMRA54A14A662F', '1964-01-14'),
+('Carlo', 'Levi', 'LVECRL02S29L219Q', '1902-11-29');
+
+ALTER TABLE libro ADD COLUMN id_autore INT(10);
+ALTER TABLE libro ADD CONSTRAINT FOREIGN KEY (id_autore) REFERENCES autore(id);
+
+UPDATE libro SET id_autore = 1 WHERE id = 1;
+UPDATE libro SET id_autore = 3 WHERE id = 2;
+UPDATE libro SET id_autore = 4 WHERE id = 3;
+UPDATE libro SET id_autore = 5 WHERE id = 4;
+UPDATE libro SET id_autore = 2 WHERE id = 5;
+UPDATE libro SET id_autore = 1 WHERE id = 6;
+
+CREATE TABLE utente(
+id INT(10) AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(20) NOT NULL,
+cognome VARCHAR(20) NOT NULL,
+email VARCHAR(50)
+);
+
+CREATE TABLE prestito(
+id INT(10) AUTO_INCREMENT PRIMARY KEY,
+id_utente INT(10),
+id_libro INT(10),
+data_inizio_prestito DATE,
+data_fine_prestito DATE,
+FOREIGN KEY(id_utente) REFERENCES utente(id),
+FOREIGN KEY(id_libro) REFERENCES libro(id)
+);
+
+INSERT INTO utente (nome, cognome, email) VALUES ('Marco', 'Friulani', 'mfriulani@yahoo.it'),
+('Davide', 'Moraschi', 'mdave555@hotmail.it'),
+('Manuela', 'Cecchini', 'cecchini_m@gmail.com'),
+('Francesco', 'Montebovi', 'mbfra@libero.it');
+
+INSERT INTO prestito (id_utente, id_libro, data_inizio_prestito, data_fine_prestito) VALUES (1, 6, '2022-07-04', '2022-07-30'),
+(1, 5, '2022-07-04', '2022-08-31'),
+(2, 2, '2022-08-14', '2022-09-30'),
+(3, 3, '2022-09-11', '2022-10-10'),
+(3, 1, '2022-09-16', '2022-10-16'),
+(3, 6, '2022-09-16', '2022-10-16'),
+(1, 4, '2022-09-12', '2022-09-30');
