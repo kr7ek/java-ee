@@ -31,21 +31,11 @@ public class Main {
 
 		for (Dispositivo dispositivo : inventario.getInventario()) {
 			switch (dispositivo.getSistemaOperativo()) {
-			case WINDOWS:
-				windowsCount++;
-				break;
-			case MACOS:
-				macosCount++;
-				break;
-			case LINUX:
-				linuxCount++;
-				break;
-			case ANDROID:
-				androidCount++;
-				break;
-			case IOS:
-				iosCount++;
-				break;
+			case WINDOWS: windowsCount++; break;
+			case MACOS: macosCount++; break;
+			case LINUX: linuxCount++; break;
+			case ANDROID: androidCount++; break;
+			case IOS: iosCount++; break;
 			}
 		}
 
