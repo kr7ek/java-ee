@@ -1,0 +1,180 @@
+CREATE DATABASE scuola;
+USE scuola;
+
+CREATE TABLE studente(
+ID INT AUTO_INCREMENT PRIMARY KEY,
+Matricola varchar(15) NOT NULL UNIQUE,
+Nome varchar(20) NOT NULL,
+Cognome varchar(20) NOT NULL,
+email varchar(30) NOT NULL UNIQUE,
+PIN varchar(5) NOT NULL UNIQUE);
+
+CREATE TABLE corso(
+ID INT AUTO_INCREMENT PRIMARY KEY,
+Codice varchar(6) NOT NULL UNIQUE,
+Nome varchar(50) NOT NULL);
+
+CREATE TABLE carriera(
+ID INT AUTO_INCREMENT PRIMARY KEY,
+Voto INT NOT NULL,
+DATA DATE NOT NULL,
+id_studente varchar(10) NOT NULL,
+id_corso varchar(6) NOT NULL,
+FOREIGN KEY (id_studente) REFERENCES Studente(matricola),
+FOREIGN KEY (id_corso) REFERENCES Corso(codice));
+
+INSERT INTO studente (matricola, nome, cognome, email, pin) VALUES 
+('041/002059', 'Vincenzo', 'Liguori', 'liguori@bcsoft.it', '11111'),
+('041/002061', 'Alberto', 'Bevilacqua', 'albbvl@lamagis.it', '2222'),
+('041/002062', 'Antonio', 'Di Gennaro', 'di.ant@bcsoft.it', '33333'),
+('041/002060', 'Leandro', 'Esposito', 'Leo.esp@lamagis.it', '44444'),
+('531/002990', 'Pippo', 'Franco', 'pi.franco@campania.it', '55555'),
+('010/001000', 'Francesco', 'Salvati', 'salvio@bcsoft.it', '66666'),
+('010/002000', 'Christian', 'D’orta', 'chris@lamagis.it', '77777'),
+('010/003000', 'Maria', 'Gloria', 'glo@bcsoft.it', '88888');
+
+INSERT INTO corso (codice, nome) VALUES
+('041010', 'Basi di Dati'),
+('041011', 'Reti di Calcolatori'),
+('041012', 'Sistemi Operativi'),
+('531010', 'Tecnologie dei Sistemi Informatici'),
+('531011', 'Economia Aziendale'),
+('010010', 'Letteratura Italiana'),
+('010011', 'Latino e Greco');
+
+
+INSERT INTO carriera (id_studente, id_corso, voto, data) VALUES
+('041/002059', '041010', 30, '2001-12-12'),
+('041/002059', '041011', 30, '2001-04-14'),
+('041/002059', '041012', 30, '2001-05-14'),
+('041/002060', '041012', 25, '1990-02-12'),
+('041/002061', '041010', 30, '1994-07-18'),
+('041/002062', '041011', 25, '1988-06-12'),
+('531/002990', '531010', 18, '1960-09-27'),
+('531/002990', '531011', 28, '1961-03-22'),
+('010/001000', '010010', 30, '2004-05-16'),
+('010/002000', '010011', 30, '2005-09-19');
+
+# Effettuare le seguenti queries sui dati:
+
+# Nome e cognome degli studenti presenti nella base di dati.
+SELECT nome, cognome 
+FROM studente;
+
+# Indirizzo e-mail e matricola dello studente Vincenzo Liguori.
+SELECT email, matricola
+FROM studente 
+WHERE nome = 'Vincenzo' 
+AND cognome = 'Liguori';
+
+# Matricola, cognome e nome di tutti gli studenti iscritti al corso di laurea di Ingegneria Informatica(codice ‘041’).
+SELECT matricola, cognome, nome 
+FROM studente 
+WHERE matricola LIKE '041%';
+
+# Informazioni sui corsi relativi al corso di laurea di Ingegneria Informatica vecchio ordinamento(codice ‘041’).
+SELECT * 
+FROM corso 
+WHERE codice LIKE '041%';
+
+# Matricola, cognome e nome di tutti gli studenti iscritti al corso di laurea di Ingegneria Informatica (codice ‘041’) ed il cui cognome inizi per la lettera ‘C’.
+SELECT matricola, cognome, nome
+FROM studente 
+WHERE matricola LIKE '041%' 
+AND cognome LIKE 'C%';
+
+# Nome degli esami, con relativa votazione e data, sostenuti dallo studente avente matricola ‘041/002059’.
+SELECT c.nome, ca.voto, ca.data_esame 
+FROM carriera ca 
+JOIN corso c ON ca.id_corso = c.Codice  
+WHERE ca.id_studente  = '041/002059';
+
+# Cognome e nome di tutti gli studenti che hanno sostenuto l’esame di ‘Basi di Dati’, sapendo che il codice dell’esame è ‘041010’.
+SELECT s.cognome, s.nome 
+FROM carriera ca 
+JOIN studente s ON ca.id_studente = s.Matricola 
+WHERE ca.id_corso = '041010';
+
+# Cognome e Nome di tutti gli studenti che hanno sostenuto sia l’esame di ‘Basi di Dati’ (codice ‘041010’), sia l’esame di ‘Reti di Calcolatori’ (codice ‘041011’).
+SELECT s.cognome, s.nome 
+FROM studente s 
+JOIN carriera ca1 ON ca1.id_studente = s.Matricola 
+JOIN carriera ca2 ON ca2.id_studente = s.Matricola 
+WHERE ca1.id_corso = '041010' 
+AND ca2.id_corso = '041011';
+
+# Cognome e nome di tutti gli studenti che hanno sostenuto o l’esame di ‘Basi di dati’ (codice ‘041010’) o l’esame di ‘Reti di Calcolatori’ (codice ‘041011’).
+SELECT DISTINCT s.cognome, s.nome 
+FROM studente s 
+JOIN carriera ca1 ON ca1.id_studente = s.Matricola 
+JOIN carriera ca2 ON ca2.id_studente = s.Matricola 
+WHERE ca1.id_corso = '041010' 
+OR ca2.id_corso = '041011';
+
+# Cognome e nome di tutti gli studenti che hanno sostenuto l’esame di ‘Basi di Dati’.
+SELECT s.cognome, s.nome 
+FROM studente s 
+JOIN carriera ca ON s.Matricola = ca.id_studente 
+JOIN corso c ON ca.id_corso = c.Codice 
+WHERE c.nome = 'Basi di Dati';
+
+# Nome degli esami, con la relativa votazione e data, sostenuti dallo studente ‘Vincenzo Liguori’.
+SELECT c.nome, ca.voto, ca.data_esame 
+FROM corso c 
+JOIN carriera ca ON c.Codice = ca.id_corso 
+JOIN studente s ON ca.id_studente = s.Matricola 
+WHERE s.nome = 'Vincenzo' 
+AND s.cognome = 'Liguori';
+
+# Cognome ed il nome degli studenti che hanno sostenuto l’esame di ‘Basi di Dati’ con una votazione maggiore di 27/30.
+SELECT s.cognome, s.nome 
+FROM studente s 
+JOIN carriera ca ON s.Matricola = ca.id_studente 
+JOIN corso c ON ca.id_corso = c.Codice 
+WHERE c.nome = 'Basi di Dati' AND ca.voto > 27;
+
+# Data e voto dello studente ‘Vincenzo Liguori’ all’esame di ‘Basi di Dati’.
+SELECT ca.data_esame, ca.voto 
+FROM carriera ca 
+JOIN studente s ON ca.id_studente = s.Matricola 
+JOIN corso c ON ca.id_corso = c.Codice 
+WHERE s.nome = 'Vincenzo' 
+AND s.cognome = 'Liguori' 
+AND c.nome = 'Basi di Dati';
+
+# Cognome e nome di tutti gli studenti di Lettere(codice ‘010’) e nomi dei relativi esami da essi sostenuti.
+SELECT s.cognome, s.nome, c.nome 
+FROM studente s 
+JOIN carriera ca ON s.Matricola = ca.id_studente 
+JOIN corso c ON ca.id_corso = c.Codice 
+WHERE s.Matricola LIKE '010%';
+
+# Cognome e nome di tutti gli studenti che non hanno sostenuto alcun esame.
+SELECT s.cognome, s.nome 
+FROM studente s 
+LEFT JOIN carriera ca ON s.Matricola = ca.id_studente 
+WHERE ca.id_studente IS NULL;
+
+# Numero di studenti che hanno sostenuto l’esame di ‘Basi di Dati’.
+SELECT COUNT(DISTINCT ca.id_studente) 
+FROM carriera ca 
+JOIN corso c ON ca.id_corso = c.Codice 
+WHERE c.nome = 'Basi di Dati';
+
+# Votazione media, il voto massimo e il voto minimo presi dallo studente ‘Pippo Franco’.
+SELECT avg(ca.voto), max(ca.voto), min(ca.voto) 
+FROM carriera ca 
+JOIN studente s ON s.Matricola = ca.id_studente 
+WHERE s.Nome = 'Pippo' 
+AND s.Cognome = 'Franco';
+
+# Per ogni esame il numero di studenti che lo ha sostenuto.
+SELECT c.Nome, COUNT(ca.id_studente) AS Numero_Studenti 
+FROM corso c LEFT JOIN carriera ca ON c.Codice = ca.id_corso 
+GROUP BY c.Codice, c.Nome;
+
+# Nome e cognome degli studenti che hanno sostenuto più di un esame con il relativo numero di esami sostenuti.
+SELECT s.nome, s.cognome, count(*) AS Numero_esami 
+FROM studente s JOIN carriera ca ON s.Matricola = ca.id_studente 
+GROUP BY s.Matricola, s.Nome, s.Cognome 
+HAVING count(*) > 1;
