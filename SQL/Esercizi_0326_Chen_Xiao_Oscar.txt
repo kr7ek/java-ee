@@ -25,7 +25,7 @@ FOREIGN KEY (id_corso) REFERENCES Corso(codice));
 
 INSERT INTO studente (matricola, nome, cognome, email, pin) VALUES 
 ('041/002059', 'Vincenzo', 'Liguori', 'liguori@bcsoft.it', '11111'),
-('041/002061', 'Alberto', 'Bevilacqua', 'albbvl@lamagis.it', '2222'),
+('041/002061', 'Alberto', 'Bevilacqua', 'albbvl@lamagis.it', '22222'),
 ('041/002062', 'Antonio', 'Di Gennaro', 'di.ant@bcsoft.it', '33333'),
 ('041/002060', 'Leandro', 'Esposito', 'Leo.esp@lamagis.it', '44444'),
 ('531/002990', 'Pippo', 'Franco', 'pi.franco@campania.it', '55555'),
