@@ -5,6 +5,8 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import esercizio1_0331.Libro;
+
 /*
  * Creare una classe Libro che abbia gli attributi titolo, prezzo ed autore. 
  * Rendere la classe persistente mediante la tecnica di Serializzazione, 
