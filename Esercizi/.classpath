@@ -16,13 +16,14 @@
 	<classpathentry kind="src" path="esercizi_0320_Chen_Xiao_Oscar"/>
 	<classpathentry kind="src" path="esercizi_0330_Chen_Xiao_Oscar"/>
 	<classpathentry kind="src" path="jdbc"/>
-	<classpathentry kind="src" path="esercizi0331_Chen_Xiao_Oscar"/>
+	<classpathentry kind="src" path="esercizi_0331_Chen_Xiao_Oscar"/>
+	<classpathentry kind="src" path="esercizi_0401_Chen_Xiao_Oscar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-25">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Krtek/Documents/workspace-spring-tools-for-eclipse-5.0.1.RELEASE/java-ee/Esercizi/mysql-connector-j-8.2.0.jar">
+	<classpathentry kind="lib" path="C:/Users/Secernato/Documents/workspace-spring-tools-for-eclipse-5.1.0.RELEASE/java-ee/Esercizi/mysql-connector-j-8.2.0.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
