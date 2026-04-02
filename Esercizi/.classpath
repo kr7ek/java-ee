@@ -23,7 +23,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Secernato/Documents/workspace-spring-tools-for-eclipse-5.1.0.RELEASE/java-ee/Esercizi/mysql-connector-j-8.2.0.jar">
+	<classpathentry kind="lib" path="C:/Users/Krtek/Documents/workspace-spring-tools-for-eclipse-5.0.1.RELEASE/java-ee/Esercizi/mysql-connector-j-8.2.0.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
