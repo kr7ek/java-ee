@@ -44,7 +44,10 @@ public class Main {
 		listaAutomobili.add(new Automobile("Peugeot", "208", "QR345ST", "6677889900", "Trazione Anteriore"));
 		
 		InterfacciaDao<Automobile> automobileDao = new AutomobileDaoImpl();
-		automobileDao.insertMany(listaAutomobili);		
+		automobileDao.insertMany(listaAutomobili);
+		
+		personaDao.findAll().forEach(p -> System.out.println(p.getNome() + " " + p.getCognome()));
+		automobileDao.findAll().forEach(a -> System.out.println(a.getMarca() + " " + a.getModello()));
 	}
 
 }

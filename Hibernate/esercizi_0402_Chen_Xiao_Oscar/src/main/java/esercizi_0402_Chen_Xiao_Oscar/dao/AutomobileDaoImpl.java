@@ -58,7 +58,7 @@ public class AutomobileDaoImpl implements InterfacciaDao<Automobile> {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			Session session = sessionFactory.openSession();
 
-			listaAutomobili = session.createQuery("FROM Libro", Automobile.class).list();
+			listaAutomobili = session.createQuery("FROM Automobile", Automobile.class).list();
 
 			session.close();
 		} catch (HibernateException e) {
@@ -82,7 +82,7 @@ public class AutomobileDaoImpl implements InterfacciaDao<Automobile> {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			Session session = sessionFactory.openSession();
 
-			Query<Automobile> query = session.createQuery("FROM Libro WHERE id = :id", Automobile.class);
+			Query<Automobile> query = session.createQuery("FROM Automobile WHERE id = :id", Automobile.class);
 			query.setParameter("id", id);
 			automobile = query.getSingleResult();
 
@@ -111,7 +111,7 @@ public class AutomobileDaoImpl implements InterfacciaDao<Automobile> {
 
 			// Query scritta in SQL
 			NativeQuery<Automobile> querySQL = session
-					.createNativeQuery("UPDATE Libro SET titolo = :titolo WHERE id = :id", Automobile.class);
+					.createNativeQuery("UPDATE Automobile SET titolo = :titolo WHERE id = :id", Automobile.class);
 			querySQL.setParameter("titolo", nome);
 			querySQL.setParameter("id", id);
 			querySQL.executeUpdate();
