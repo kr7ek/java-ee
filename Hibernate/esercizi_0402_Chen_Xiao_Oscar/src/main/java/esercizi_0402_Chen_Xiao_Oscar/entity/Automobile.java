@@ -23,9 +23,9 @@ public class Automobile {
 	private String modello;
 	@Column
 	private String targa;
-	@Column
+	@Column(name = "numero_telaio")
 	private String numeroTelaio;
-	@Column
+	@Column(name = "tipo_trazione")
 	private String tipoTrazione;
 	
 	@ManyToOne

@@ -33,9 +33,8 @@
         <property name="hibernate.connection.pool_size">10</property>
 
         <!-- Entity mappings -->
-        <mapping class="com.bcsoft.entity.CodiceFiscale"/>
-        <mapping class="com.bcsoft.entity.Autore"/>
-        <mapping class="com.bcsoft.entity.Libro"/>
+        <mapping class="esercizi_0402_Chen_Xiao_Oscar.entity.Persona"/>
+        <mapping class="esercizi_0402_Chen_Xiao_Oscar.entity.Automobile"/>
 
     </session-factory>
 </hibernate-configuration>
