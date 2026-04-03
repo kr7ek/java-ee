@@ -1,4 +1,4 @@
-package esercizi_0403_Chen_Xiao_Oscar.configurazione;
+package esercizi_0403_Chen_Xiao_Oscar.configuration;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

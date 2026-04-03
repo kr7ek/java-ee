@@ -33,6 +33,7 @@ public class Main {
 		listaPersone.add(new Persona("Anna", "Neri", "Via Torino 4", "Architetto", 28));
 		listaPersone.add(new Persona("Sara", "Gialli", "Via Firenze 5", "Insegnante", 32));
 		
+		// Salvataggio delle persone nel database
 		InterfacciaDao<Persona> personaDao = new PersonaDaoImpl();
 		personaDao.insertMany(listaPersone);
 		
@@ -43,10 +44,16 @@ public class Main {
 		listaAutomobili.add(new Automobile("Renault", "Clio", "MN012OP", "5566778899", "Trazione Anteriore"));
 		listaAutomobili.add(new Automobile("Peugeot", "208", "QR345ST", "6677889900", "Trazione Anteriore"));
 		
+		// Salvataggio delle automobili nel database
 		InterfacciaDao<Automobile> automobileDao = new AutomobileDaoImpl();
 		automobileDao.insertMany(listaAutomobili);
 		
+		// Lettura delle persone e delle automobili dal database
+		System.out.println("Persone nel database:");
 		personaDao.findAll().forEach(p -> System.out.println(p.getNome() + " " + p.getCognome()));
+		
+		// Lettura delle automobili dal database
+		System.out.println("\nAutomobili nel database:");
 		automobileDao.findAll().forEach(a -> System.out.println(a.getMarca() + " " + a.getModello()));
 	}
 

@@ -11,7 +11,7 @@ public interface InterfacciaDao<T> { // utilizza generics
 	// accetta un id e restituisce l'oggetto T corrispondente a quell'id
 	public T findOne(Integer id);
 	// accetta un id e un oggetto T, e aggiorna l'oggetto T corrispondente a quell'id nel database
-	public void modify(Integer id, String nome);
+	public void modify(Integer id, T oggetto);
 	// accetta un id e elimina l'oggetto T corrispondente a quell'id dal database
 	public void delete(Integer id);
 

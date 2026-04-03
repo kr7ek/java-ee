@@ -99,7 +99,7 @@ public class AutomobileDaoImpl implements InterfacciaDao<Automobile> {
 	}
 
 	@Override
-	public void modify(Integer id, String nome) {
+	public void modify(Integer id, Automobile auto) {
 		// TODO Auto-generated method stub
 
 		Transaction transaction = null;
@@ -109,12 +109,16 @@ public class AutomobileDaoImpl implements InterfacciaDao<Automobile> {
 			Session session = sessionFactory.openSession();
 			transaction = session.beginTransaction();
 
-			// Query scritta in SQL
-			NativeQuery<Automobile> querySQL = session
-					.createNativeQuery("UPDATE Automobile SET titolo = :titolo WHERE id = :id", Automobile.class);
-			querySQL.setParameter("titolo", nome);
-			querySQL.setParameter("id", id);
-			querySQL.executeUpdate();
+			Query<Automobile> query = session.createQuery("UPDATE Automobile " + "SET marca = :marca, "
+					+ "SET modello = :modello, " + "SET targa = :targa, " + "SET numero_telaio = :numero_telaio, "
+					+ "SET tipo_trazione = :tipo_trazione " + "WHERE id = :id", Automobile.class);
+			query.setParameter("marca", auto.getMarca());
+			query.setParameter("modello", auto.getModello());
+			query.setParameter("targa", auto.getTarga());
+			query.setParameter("numero_telaio", auto.getNumeroTelaio());
+			query.setParameter("tipo_trazione", auto.getTipoTrazione());
+			query.setParameter("id", id);
+			query.executeUpdate();
 
 			transaction.commit();
 			session.close();

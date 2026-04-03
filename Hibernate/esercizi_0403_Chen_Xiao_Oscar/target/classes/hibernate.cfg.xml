@@ -8,7 +8,7 @@
 
         <!-- Database connection -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/gioco_da_tavolo</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/gioco_tavolo</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"></property>
 
@@ -33,8 +33,8 @@
         <property name="hibernate.connection.pool_size">10</property>
 
         <!-- Entity mappings -->
-        <mapping class="esercizi_0402_Chen_Xiao_Oscar.entity.GiocoDaTavolo"/>
-        <mapping class="esercizi_0402_Chen_Xiao_Oscar.entity.Partecipante"/>
+        <mapping class="esercizi_0403_Chen_Xiao_Oscar.entity.GiocoDaTavolo"/>
+        <mapping class="esercizi_0403_Chen_Xiao_Oscar.entity.Partecipante"/>
 
     </session-factory>
 </hibernate-configuration>
