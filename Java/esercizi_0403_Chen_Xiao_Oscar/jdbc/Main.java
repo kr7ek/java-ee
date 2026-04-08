@@ -66,7 +66,7 @@ public class Main {
 		
 		// Cancellazione di tutti gli studenti
 		System.out.println("\nCancellazione di tutti gli studenti:");
-		cancellaTuttiStudenti();
+		//cancellaTuttiStudenti();
 		
 		// Stampa di tutti gli studenti dopo la cancellazione di tutti
 		System.out.println("\nStampa di tutti gli studenti dopo la cancellazione di tutti:");
