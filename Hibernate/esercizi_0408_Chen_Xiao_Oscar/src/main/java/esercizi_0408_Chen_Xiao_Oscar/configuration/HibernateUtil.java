@@ -9,6 +9,9 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
+import esercizi_0408_Chen_Xiao_Oscar.entity.Medico;
+import esercizi_0408_Chen_Xiao_Oscar.entity.Paziente;
+
 //Classe di configurazione di Hibernate
 public class HibernateUtil {
 	
@@ -53,8 +56,8 @@ public class HibernateUtil {
 			config.setProperties(settings);
 			
 			//Mappare le classi
-//			config.addAnnotatedClass(Persona.class);
-//			config.addAnnotatedClass(Automobile.class);
+			config.addAnnotatedClass(Medico.class);
+			config.addAnnotatedClass(Paziente.class);
 			
 			//Creo un registro dei servizi utilizzando le proprietà di configurazione 
 			//è un contenitore dei servizi interni di Hibernate

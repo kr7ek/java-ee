@@ -5,6 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import esercizi_0408_Chen_Xiao_Oscar.configuration.HibernateUtil;
+import esercizi_0408_Chen_Xiao_Oscar.entity.*;
 
 /*
  * Si supponga di dover realizzare un sistema di gestione di una piattaforma sanitaria.
@@ -23,8 +24,18 @@ public class Main {
 
 	public static void main(String[] args) {
 
+		Medico m1 = new Medico(1234, "Mario", "Rossi", "Cardiologia", "mario.rossi@gmail.com");
+		Medico m2 = new Medico(5678, "Carmen", "Blu", "Pediatria", "carmen.blu@gmail.com");
+		Medico m3 = new Medico(9101, "Paola", "Verdi", "Neurologia", "paola.verdi@gmail.com");
 		
-
+		Paziente p1 = new Paziente("RSSMRA", "Mario", "Rossi", "01/01/1980");
+		Paziente p2 = new Paziente("BLUCME", "Carmen", "Blu", "02/02/1990");
+		Paziente p3 = new Paziente("VRDPLA", "Paola", "Verdi", "03/03/2000");
+		
+		m1.getPazienti().add(p1);
+		m1.getPazienti().add(p2);
+		p1.getMedici().add(m1);
+		p2.getMedici().add(m1);
 		
 		Transaction transaction = null;
 		Session session = null;
@@ -35,13 +46,12 @@ public class Main {
 			
 			
 			//inseriamo i dati, salviamo prima le persone
-//			session.merge(p1);
-//			session.merge(p2);
-//			session.merge(p3);
-//			
-//			session.merge(a1);
-//			session.merge(a2);
-//			session.merge(a3);
+			session.persist(m1);
+			session.persist(m2);
+			session.persist(m3);
+			session.persist(p1);
+			session.persist(p2);
+			session.persist(p3);
 			
 			transaction.commit();
 		}catch(HibernateException e) {
