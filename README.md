@@ -101,5 +101,5 @@ Questa raccolta di progetti serve per:
 
 ## 👤 Autore
 
-* Nome: *Xiao Oscar Chen*
+* Nome: *Kr7ek*
 * GitHub: *https://github.com/kr7ek*
