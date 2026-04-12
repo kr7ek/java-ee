@@ -1,5 +1,6 @@
 package esercizio5;
 
+@SuppressWarnings("serial")
 public class SottrazioneIllegale extends Exception {
 
 	public SottrazioneIllegale(String message) {

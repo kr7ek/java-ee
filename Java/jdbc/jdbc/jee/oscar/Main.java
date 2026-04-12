@@ -169,6 +169,12 @@ public class Main {
 			stmt.setInt(4, id);
 
 			int righe = stmt.executeUpdate();
+			
+			if (righe > 0) {
+				System.out.println("Dipendente aggiornato con successo!");
+			} else {
+				System.out.println("Errore nell'aggiornamento del dipendente.");
+			}
 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -222,6 +228,12 @@ public class Main {
 			stmt.setInt(1, id);
 
 			int righe = stmt.executeUpdate();
+			
+			if (righe > 0) {
+				System.out.println("Dipendente eliminato con successo!");
+			} else {
+				System.out.println("Errore nell'eliminazione del dipendente.");
+			}
 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

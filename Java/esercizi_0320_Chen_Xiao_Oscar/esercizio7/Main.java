@@ -10,6 +10,7 @@ public class Main {
 		System.out.println("Creazione di una scatola di dimensioni 15x25x35:");
 		Box box2 = new Box(15, 25, 35);
 		System.out.println("Creazione di una scatola di dimensioni 10x-3x30:");
+		@SuppressWarnings("unused")
 		Box box3 = new Box(10, -3, 30); // Questo solleverà un'eccezione
 
 		// Verifica se le due scatole sono uguali
@@ -29,7 +30,6 @@ public class Main {
 		} else {
 			System.out.println("Nessuna delle due scatole può essere contenuta nell'altra.");
 		}
-
 	}
 
 }

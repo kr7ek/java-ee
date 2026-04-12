@@ -36,4 +36,28 @@ public class Squadra {
 			System.out.println("Il giocatore " + giocatore.getNome() + " non è nella squadra.");
 		}
 	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public double getCapitaleSociale() {
+		return capitaleSociale;
+	}
+
+	public void setCapitaleSociale(double capitaleSociale) {
+		this.capitaleSociale = capitaleSociale;
+	}
+
+	public ArrayList<Giocatore> getGiocatori() {
+		return giocatori;
+	}
+
+	public void setGiocatori(ArrayList<Giocatore> giocatori) {
+		this.giocatori = giocatori;
+	}
 }
