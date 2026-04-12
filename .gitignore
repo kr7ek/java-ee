@@ -6,6 +6,7 @@ target/
 .classpath
 .settings/
 .dbeaver/
+Scripts/
 .factorypath
 
 # ===== IntelliJ =====
