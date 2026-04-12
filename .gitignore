@@ -1,0 +1,23 @@
+# ===== Maven =====
+target/
+
+# ===== Eclipse / STS =====
+.project
+.classpath
+.settings/
+.factorypath
+
+# ===== IntelliJ =====
+.idea/
+*.iml
+
+# ===== VS Code =====
+.vscode/
+
+# ===== Logs / temp =====
+*.log
+*.tmp
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
