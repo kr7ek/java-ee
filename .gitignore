@@ -1,25 +1,39 @@
-# ===== Maven =====
+# Build
 target/
+bin/
 
-# ===== Eclipse / STS =====
-.project
+# Compiled files
+*.class
+
+# Logs
+*.log
+
+# Maven wrapper (opzionale)
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE - Eclipse
 .classpath
+.project
 .settings/
-.dbeaver/
-Scripts/
-.factorypath
 
-# ===== IntelliJ =====
+# IDE - IntelliJ
 .idea/
 *.iml
+out/
 
-# ===== VS Code =====
+# VS Code
 .vscode/
 
-# ===== Logs / temp =====
-*.log
-*.tmp
-
-# ===== OS =====
+# OS files
 .DS_Store
 Thumbs.db
+
+# Database / tool locali
+.dbeaver/
+Scripts/
+
+# Environment / secrets
+.env
+
+# Temporary
+*.tmp
