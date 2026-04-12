@@ -20,8 +20,8 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		// aggiungiDipendente(1, "Elia", "Neri", 2000);
-		// aggiungiDipendenteByPreparedStatement(2, "Leone", "Neri", 2500);
+		aggiungiDipendente(1, "Elia", "Neri", 2000);
+		aggiungiDipendenteByPreparedStatement(2, "Leone", "Neri", 2500);
 		aggiornaDipendente(2, "Asia", "Rossi", 2100);
 
 	}
@@ -34,7 +34,7 @@ public class Main {
 
 		String url = "jdbc:mysql://localhost:3306/jdbc";
 		String username = "root";
-		String password = "54682";
+		String password = "";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -93,7 +93,7 @@ public class Main {
 
 		String url = "jdbc:mysql://localhost:3306/jdbc";
 		String username = "root";
-		String password = "54682";
+		String password = "";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -153,7 +153,7 @@ public class Main {
 
 		String url = "jdbc:mysql://localhost:3306/jdbc";
 		String username = "root";
-		String password = "54682";
+		String password = "";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -209,7 +209,7 @@ public class Main {
 
 		String url = "jdbc:mysql://localhost:3306/jdbc";
 		String username = "root";
-		String password = "54682";
+		String password = "";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
