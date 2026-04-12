@@ -58,7 +58,7 @@ public class TestGatto {
 
 		String url = "jdbc:mysql://localhost:3306/gatti";
 		String username = "root";
-		String password = "5468222";
+		String password = "";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -108,7 +108,7 @@ public class TestGatto {
 
 		String url = "jdbc:mysql://localhost:3306/gatti";
 		String username = "root";
-		String password = "5468222";
+		String password = "";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -155,7 +155,7 @@ public class TestGatto {
 
 		String url = "jdbc:mysql://localhost:3306/gatti";
 		String username = "root";
-		String password = "5468222";
+		String password = "";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -200,7 +200,7 @@ public class TestGatto {
 
 		String url = "jdbc:mysql://localhost:3306/gatti";
 		String username = "root";
-		String password = "5468222";
+		String password = "";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -243,7 +243,7 @@ public class TestGatto {
 
 		String url = "jdbc:mysql://localhost:3306/gatti";
 		String username = "root";
-		String password = "5468222";
+		String password = "";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
