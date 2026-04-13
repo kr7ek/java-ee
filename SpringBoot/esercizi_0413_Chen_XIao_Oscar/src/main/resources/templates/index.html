@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Risultato</title>
+</head>
+
+<body>
+
+	<h1>Risultato</h1>
+
+	<a th:href="@{/params/testo}">
+	    <button>Testo semplice</button>
+	</a>
+
+	<a th:href="@{/params/prodotto(nome='Scarpe')}">
+	    <button>Prodotto</button>
+	</a>
+
+	<a th:href="@{/params/quantita(qta=5)}">
+	    <button>Quantità</button>
+	</a>
+
+	<a th:href="@{/params/dettagli/Telefono(prezzo=799)}">
+	    <button>Dettagli prodotto</button>
+	</a>
+
+	<a th:href="@{/params/cliente(nomeCliente='Marco', prodotto='Laptop')}">
+	    <button>Cliente + Prodotto</button>
+	</a>
+	
+	<p th:text="${messaggio}"></p>
+	<p th:text="${risultato}"></p>
+
+</body>
+
+</html>

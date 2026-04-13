@@ -1,7 +1,5 @@
-# Build
-target/
-bin/
 HELP.md
+target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -33,13 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-# Database / tool locali
-.dbeaver/
-Scripts/
-
-# Environment / secrets
-.env
-
-# Temporary
-*.tmp
