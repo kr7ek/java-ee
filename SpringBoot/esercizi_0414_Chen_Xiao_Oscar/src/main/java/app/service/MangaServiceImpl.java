@@ -1,34 +1,44 @@
 package app.service;
 
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import app.model.Manga;
+import app.repository.MangaRepository;
 
 @Service
 public class MangaServiceImpl implements InterfacciaService<Manga> {
 
+	@Autowired
+	private MangaRepository mangaRepository;
+	
 	@Override
 	public Manga getObjectById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+
+		Optional<Manga> optionalManga = mangaRepository.findById(id);
+		
+		if (optionalManga.isPresent()) {
+			return optionalManga.get();
+		} else {
+			throw new RuntimeException("Il manga con id " + id + " non è stato trovato");
+		}
 	}
 
 	@Override
 	public void saveObject(Manga object) {
-		// TODO Auto-generated method stub
-		
+		this.mangaRepository.save(object);
 	}
 
 	@Override
 	public java.util.List<Manga> getAllObject() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.mangaRepository.findAll();
 	}
 
 	@Override
 	public void deleteObjectById(int id) {
-		// TODO Auto-generated method stub
-		
+		this.mangaRepository.deleteById(id);
 	}
 
 }

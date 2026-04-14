@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Manga</title>
+</head>
+<body>
+
+<h1>Lista Manga</h1>
+
+<a href="/manga/new">Aggiungi Manga</a>
+
+<table border="1">
+    <tr>
+        <th>Titolo</th>
+        <th>Autore</th>
+        <th>Prezzo</th>
+    </tr>
+
+    <tr th:each="m : ${manga}">
+        <td th:text="${m.titolo}"></td>
+        <td th:text="${m.autore}"></td>
+        <td th:text="${m.prezzo}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Fumetterie</title>
+</head>
+
+<body>
+
+	<h1>Lista Fumetterie</h1>
+
+	<a href="/fumetterie/new">Aggiungi Fumetteria</a>
+
+	<table border="1">
+		<tr>
+			<th>Nome</th>
+			<th>Città</th>
+		</tr>
+
+		<tr th:each="f : ${fumetterie}">
+			<td th:text="${f.nome}"></td>
+			<td th:text="${f.citta}"></td>
+		</tr>
+	</table>
+
+</body>
+
+</html>
