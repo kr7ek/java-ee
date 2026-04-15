@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Dettaglio Seggio</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+	<div class="container">
+		<h1 th:text="${seggio.sede}"></h1>
+		<h2 th:text="${seggio.citta}"></h2>
+		<h3 th:text="${seggio.provincia}"></h3>
+		<h3 th:text="${seggio.regione}"></h3>
+
+		<h2>Elenco elettori</h2>
+
+		<table border="1">
+			<tr>
+				<th>Nome</th>
+				<th>Cognome</th>
+				<th>Codice Fiscale</th>
+				<th>Tessera Elettorale</th>
+			</tr>
+
+			<tr th:each="e : ${seggio.persone}">
+				<td th:text="${e.nome}"></td>
+				<td th:text="${e.cognome}"></td>
+				<td th:text="${e.codiceFiscale}"></td>
+				<td> <a th:href="@{/tessere/{id}(id=${e.id})}" th:text="link">
+					</a></td>
+			</tr>
+		</table>
+		<a href="/seggi" class="link-home"> indietro </a>
+	</div>
+</body>
+
+</html>

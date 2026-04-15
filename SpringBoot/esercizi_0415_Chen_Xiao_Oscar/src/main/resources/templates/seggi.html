@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Seggi</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Lista Seggi</h1>
+
+		<table border="1">
+			<tr>
+				<th> Sede </th>
+				<th> Città </th>
+				<th> Provincia </th>
+				<th> Regione </th>
+				<th> N° Elettori </th>
+			</tr>
+			<tr th:each="s : ${seggi}">
+				<td>
+					<a th:href="@{/seggi/{id}(id=${s.codiceSeggio})}" th:text="${s.sede}"></a>
+				</td>
+				<td th:text="${s.citta}"></td>
+				<td th:text="${s.provincia}"></td>
+				<td th:text="${s.regione}"></td>
+				<td th:text="${#lists.size(s.persone)}"></td>
+			</tr>
+		</table>
+
+		<a href="/seggi/create" class="link-home">Aggiungi Seggio</a>
+		<a href="/" class="link-home"> indietro </a>
+	</div>
+</body>
+
+</html>

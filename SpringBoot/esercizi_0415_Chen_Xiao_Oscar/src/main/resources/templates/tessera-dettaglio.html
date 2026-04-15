@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Dettaglio Persona</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+	<div class="container">
+		<h1 th:text="${persona?.tessera?.numeroTessera}"></h1>
+		<h1 th:text="${persona?.tessera?.scadenza}"></h1>
+
+		<h2>Dettagli Persona</h2>
+
+		<table border="1">
+			<tr>
+				<th>Nome</th>
+				<th>Cognome</th>
+				<th>Codice Fiscale</th>
+				<th>Città</th>
+				<th>Provincia</th>
+				<th>Regione</th>
+			</tr>
+
+			<tr th:each="e : ${persona}">
+				<td th:text="${e.nome}"></td>
+				<td th:text="${e.cognome}"></td>
+				<td th:text="${e.codiceFiscale}"></td>
+				<td th:text="${e.seggio.citta}"></td>
+				<td th:text="${e.seggio.provincia}"></td>
+				<td th:text="${e.seggio.regione}"></td>
+			</tr>
+		</table>
+		<a href="/seggi" class="link-home"> indietro </a>
+	</div>
+</body>
+
+</html>

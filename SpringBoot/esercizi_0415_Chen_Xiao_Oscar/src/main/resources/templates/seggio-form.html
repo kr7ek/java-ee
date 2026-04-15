@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<div class="container">
+		<title>Nuova Fumetteria</title>
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+	<h1>Nuovo Seggio</h1>
+
+	<form th:action="@{/seggi}" th:object="${seggio}" method="post">
+		Sede: <input type="text" th:field="*{sede}" /><br>
+		Città: <input type="text" th:field="*{citta}" /><br>
+		Provincia: <input type="text" th:field="*{provincia}" /><br>
+		Regione: <input type="text" th:field="*{regione}" /><br>
+		<button type="submit">Salva</button>
+	</form>
+	<a href="/seggi" class="link-home"> indietro </a>
+	</div>
+</body>
+
+</html>
