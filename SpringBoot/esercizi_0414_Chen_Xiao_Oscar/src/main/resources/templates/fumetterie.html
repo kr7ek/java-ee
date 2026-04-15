@@ -3,26 +3,31 @@
 
 <head>
 	<title>Fumetterie</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
 <body>
+	<div class="container">
+		<h1>Lista Fumetterie</h1>
 
-	<h1>Lista Fumetterie</h1>
+		<table border="1">
+			<tr>
+				<th> Nome </th>
+				<th> Indirizzo </th>
+				<th> Numero manga presenti </th>
+			</tr>
+			<tr th:each="f : ${fumetterie}">
+				<td>
+					<a th:href="@{/fumetterie/{id}(id=${f.id})}" th:text="${f.nome}"></a>
+				</td>
+				<td th:text="${f.indirizzo}"></td>
+				<td th:text="${#lists.size(f.mangaList)}"></td>
+			</tr>
+		</table>
 
-	<a href="/fumetterie/new">Aggiungi Fumetteria</a>
-
-	<table border="1">
-		<tr>
-			<th>Nome</th>
-			<th>Città</th>
-		</tr>
-
-		<tr th:each="f : ${fumetterie}">
-			<td th:text="${f.nome}"></td>
-			<td th:text="${f.citta}"></td>
-		</tr>
-	</table>
-
+		<a href="/fumetterie/new" class="link-home">Aggiungi Fumetteria</a>
+		<a href="/" class="link-home"> indietro </a>
+	</div>
 </body>
 
 </html>

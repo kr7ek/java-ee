@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>Manga</title>
+	<title>Manga</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
+
 <body>
+	<div class="container">
+		<h1>Lista Manga</h1>
 
-<h1>Lista Manga</h1>
+		<table border="1">
+			<tr>
+				<th> Titolo </th>
+				<th> Autore </th>
+				<th> Prezzo </th>
+				<th> Fumetteria </th>
+			</tr>
 
-<a href="/manga/new">Aggiungi Manga</a>
+			<tr th:each="m : ${manga}">
+				<td th:text="${m.titolo}"></td>
+				<td th:text="${m.autore}"></td>
+				<td th:text="${m.prezzo}"></td>
+				<td>
+					<a th:href="@{/fumetterie/{id}(id=${m.fumetteria.id})}" th:text="${m.fumetteria.nome}">
+					</a>
+				</td>
+			</tr>
+		</table>
 
-<table border="1">
-    <tr>
-        <th>Titolo</th>
-        <th>Autore</th>
-        <th>Prezzo</th>
-    </tr>
-
-    <tr th:each="m : ${manga}">
-        <td th:text="${m.titolo}"></td>
-        <td th:text="${m.autore}"></td>
-        <td th:text="${m.prezzo}"></td>
-    </tr>
-</table>
-
+		<a href="/manga/new" class="link-home">Aggiungi Manga</a>
+		<a href="/" class="link-home"> indietro </a>
+	</div>
 </body>
+
 </html>

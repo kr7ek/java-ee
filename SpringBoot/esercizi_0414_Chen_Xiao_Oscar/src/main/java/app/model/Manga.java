@@ -28,6 +28,14 @@ public class Manga {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Manga(int id, String titolo, String autore, double prezzo) {
+		super();
+		this.id = id;
+		this.titolo = titolo;
+		this.autore = autore;
+		this.prezzo = prezzo;
+	}
+
 	public Manga(String titolo, String autore, double prezzo, Fumetteria fumetteria) {
 		super();
 		this.titolo = titolo;
@@ -66,6 +74,14 @@ public class Manga {
 
 	public void setPrezzo(double prezzo) {
 		this.prezzo = prezzo;
+	}
+
+	public Fumetteria getFumetteria() {
+		return fumetteria;
+	}
+
+	public void setFumetteria(Fumetteria fumetteria) {
+		this.fumetteria = fumetteria;
 	}
 
 	@Override

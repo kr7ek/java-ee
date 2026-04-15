@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Dettaglio Fumetteria</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+	<div class="container">
+		<h1 th:text="${fumetteria.nome}"></h1>
+		<p th:text="${fumetteria.indirizzo}"></p>
+
+		<h2>Manga disponibili</h2>
+
+		<table border="1">
+			<tr>
+				<th>Titolo</th>
+				<th>Autore</th>
+				<th>Prezzo</th>
+			</tr>
+
+			<tr th:each="m : ${fumetteria.mangaList}">
+				<td th:text="${m.titolo}"></td>
+				<td th:text="${m.autore}"></td>
+				<td th:text="${m.prezzo}"></td>
+			</tr>
+		</table>
+		<a href="/fumetterie" class="link-home"> indietro </a>
+	</div>
+</body>
+
+</html>

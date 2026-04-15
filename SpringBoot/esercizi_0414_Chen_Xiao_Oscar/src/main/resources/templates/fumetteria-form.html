@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>Nuova Fumetteria</title>
+	<div class="container">
+		<title>Nuova Fumetteria</title>
+		<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
+
 <body>
 
-<h1>Nuova Fumetteria</h1>
+	<h1>Nuova Fumetteria</h1>
 
-<form th:action="@{/fumetterie}" th:object="${fumetteria}" method="post">
-    Nome: <input type="text" th:field="*{nome}" /><br>
-    Città: <input type="text" th:field="*{citta}" /><br>
-    <button type="submit">Salva</button>
-</form>
-
+	<form th:action="@{/fumetterie}" th:object="${fumetteria}" method="post">
+		Nome: <input type="text" th:field="*{nome}" /><br>
+		Indirizzo: <input type="text" th:field="*{indirizzo}" /><br>
+		<button type="submit">Salva</button>
+	</form>
+	<a href="/fumetterie" class="link-home"> indietro </a>
+	</div>
 </body>
+
 </html>

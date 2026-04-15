@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -38,5 +39,12 @@ public class FumetteriaController {
     public String save(@ModelAttribute Fumetteria fumetteria) {
         fumetteriaServiceImpl.saveObject(fumetteria);
         return "redirect:/fumetterie";
+    }
+    
+    @GetMapping("/{id}")
+    public String dettaglio(@PathVariable Integer id, Model model) {
+        Fumetteria f = fumetteriaServiceImpl.getObjectById(id);
+        model.addAttribute("fumetteria", f);
+        return "fumetteria-dettaglio";
     }
 }
